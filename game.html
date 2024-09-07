@@ -71,7 +71,7 @@
             iframe.width = iframeWidth;
             iframe.height = iframeHeight;
 
-            const game = games.find(game => game.url === iframeSrc);
+            const game = config.games.find(game => game.url === iframeSrc);
             if (game) {
                 iframe.src = game.url;
                 document.getElementById('game-title').textContent = game.title 
