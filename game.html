@@ -11,12 +11,12 @@
 <body>
     <header>
         <!-- <a href=/index.html -->
-            <h1 id="game-title">game</h1>
+            <h1 id="game-title">jma7th</h1>
         <!-- </a> -->
-        <p id="game-authors">a game by jma7th</p>
+        <p id="game-authors">loading...</p>
         <nav>
             <ul>
-                <li><a href="/index.html#projects">Back</a></li>
+                <li><a href="./index.html#projects">Back</a></li>
                 <li><a href="javascript:toggleFullscreen()">Fullscreen</a></li>
                 
             </ul>
@@ -61,21 +61,21 @@
 
         document.addEventListener('DOMContentLoaded', async function() {
             const config = await fetchConfig();
-            const allowedUrls = config.allowedUrls;
-            const gameTitles = config.gameTitles;
-            const gameAuthors = config.gameAuthors;
+            const games = config.games;
             const params = getQueryParams();
             const iframeSrc = params['iframeSrc'];
             const iframeWidth = params['width'] || '360'; // Default width
             const iframeHeight = params['height'] || '640'; // Default height
 
-            if (allowedUrls.includes(iframeSrc)) {
-                const iframe = document.getElementById('game-iframe');
-                iframe.src = iframeSrc;
-                iframe.width = iframeWidth;
-                iframe.height = iframeHeight;
-                document.getElementById('game-title').textContent = gameTitles[iframeSrc] || 'jma7th';
-                document.getElementById('game-authors').textContent =  gameAuthors[iframeSrc] || 'a game by jma7th';
+            const iframe = document.getElementById('game-iframe');
+            iframe.width = iframeWidth;
+            iframe.height = iframeHeight;
+
+            const game = games.find(game => game.url === iframeSrc);
+            if (game) {
+                iframe.src = game.url;
+                document.getElementById('game-title').textContent = game.title 
+                document.getElementById('game-authors').textContent =  game.author  || 'a game made by jma7th'
             } else {
                 document.getElementById('game-iframe').src = 'https://jma7th.github.io/Pareamento-Alpha/';
                 document.getElementById('game-title').textContent = 'Pareamento Alpha';

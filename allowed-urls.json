@@ -1,24 +1,32 @@
-{ "allowedUrls" : 
-    [
-        "https://jma7th.github.io/Pareamento-Alpha/",
-        "https://jma7th.github.io/fishing-game/html5/index.html",
-        "https://enzo7274.github.io/DefiantStrife_HTML5/",
-        "https://itch.io/embed-upload/10148199?color=000000",
-        "https://itch.io/embed-upload/9967862?color=3f2832",
-        "https://itch.io/embed-upload/10195521?color=5f5f5f",
-        "https://itch.io/embed-upload/10025909?color=327345"
-    ],
-    "gameTitles": {
-        "https://jma7th.github.io/Pareamento-Alpha/": "Pareamento",
-        "https://jma7th.github.io/fishing-game/html5/index.html": "Pescaria da Lavi-chan",
-        "https://itch.io/embed-upload/10148199?color=000000": "Defiant Strife",
-        "https://itch.io/embed-upload/9967862?color=3f2832": "Escape Dragon",
-        "https://itch.io/embed-upload/10195521?color=5f5f5f": "erutnevdA",
-        "https://itch.io/embed-upload/10025909?color=327345": "Maddie Rush"
-    },
-    "gameAuthors": {
-        "https://jma7th.github.io/Pareamento-Alpha/": "a game by jma7th",
-        "https://itch.io/embed-upload/9967862?color=3f2832": "a game by jma7th, Lavinia Pamponet and Thaís Ferreira",
-        "https://itch.io/embed-upload/10148199?color=000000": "a game by jma7th and Enzo7274"
-    }
+
+{
+    "games": [
+        {
+            "url": "https://jma7th.github.io/Pareamento-Alpha/",
+            "author": "a game by jma7th",
+            "title": "Pareamento"
+        },
+        {
+            "url": "https://jma7th.github.io/fishing-game/html5/index.html",
+            "title": "Pescaria da Lavi-chan"
+        },
+        {
+            "url": "https://itch.io/embed-upload/10148199?color=000000",
+            "title": "Defiant Strife",
+            "author": "a game by jma7th and Enzo7274"
+        },
+        {
+            "url": "https://itch.io/embed-upload/9967862?color=3f2832",
+            "title": "Escape Dragon",
+            "author": "a game by jma7th, Lavinia Pamponet and Thaís Ferreira"
+        },
+        {
+            "url": "https://itch.io/embed-upload/10195521?color=5f5f5f",
+            "title": "erutnevdA"
+        },
+        {
+            "url": "https://itch.io/embed-upload/10025909?color=ffffff",
+            "title": "Maddie Rush"
+        }
+    ]
 }
