@@ -26,6 +26,7 @@ header {
     padding: 1rem;
     text-align: center;
     z-index: 1000; /* Ensures header stays on top */
+    text-decoration: none;
 }
 
 header nav ul {
@@ -62,6 +63,13 @@ section::before {
     visibility: hidden;
 }
 
+h1, h1:visited, h1:hover, h1:active, h1:focus {
+    text-decoration: none;
+    color: #fff;
+    cursor: default;
+    
+}
+
 h2 {
     margin-bottom: 10px;
 }
@@ -80,4 +88,53 @@ footer {
     padding: 1rem;
     text-align: center;
     z-index: 1000; /* Ensures footer stays on top */
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%; /* Full viewport height */
+}
+.overlay-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.overlay-button:hover {
+    background-color: #0056b3;
+}
+.overlay-button:active {
+    background-color: #004085;
+    transform: scale(0.98);
+}
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 150px; /* Adjust this value to position the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.back-button:hover {
+    background-color: #218838;
+}
+.back-button:active {
+    background-color: #1e7e34;
+    transform: scale(0.98);
 }
