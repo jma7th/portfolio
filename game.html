@@ -11,14 +11,14 @@
 <body>
     <header>
         <!-- <a href=/index.html -->
-            <h1>jma7th</h1>
+            <h1 id="game-title">game</h1>
         <!-- </a> -->
-        <p>Game Developer | Designer | Artist</p>
+        <p id="game-authors">a game by jma7th</p>
         <nav>
             <ul>
-                <li><a href="/index.html#about">About</a></li>
-                <li><a href="/index.html#projects">Projects</a></li>
-                <li><a href="/index.html#contact">Contact</a></li>
+                <li><a href="/index.html#projects">Back</a></li>
+                <li><a href="javascript:toggleFullscreen()">Fullscreen</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -43,7 +43,7 @@
                 }
             }
 
-            function getQueryParams() {
+        function getQueryParams() {
             const params = {};
             const queryString = window.location.search.substring(1);
             const regex = /([^&=]+)=([^&]*)/g;
@@ -54,13 +54,16 @@
             return params;
         }
 
-        async function fetchAllowedUrls() {
+        async function fetchConfig() {
             const response = await fetch('allowed-urls.json');
             return response.json();
         }
 
         document.addEventListener('DOMContentLoaded', async function() {
-            const allowedUrls = await fetchAllowedUrls();
+            const config = await fetchConfig();
+            const allowedUrls = config.allowedUrls;
+            const gameTitles = config.gameTitles;
+            const gameAuthors = config.gameAuthors;
             const params = getQueryParams();
             const iframeSrc = params['iframeSrc'];
             const iframeWidth = params['width'] || '360'; // Default width
@@ -71,8 +74,12 @@
                 iframe.src = iframeSrc;
                 iframe.width = iframeWidth;
                 iframe.height = iframeHeight;
+                document.getElementById('game-title').textContent = gameTitles[iframeSrc] || 'jma7th';
+                document.getElementById('game-authors').textContent =  gameAuthors[iframeSrc] || 'a game by jma7th';
             } else {
                 document.getElementById('game-iframe').src = 'https://jma7th.github.io/Pareamento-Alpha/';
+                document.getElementById('game-title').textContent = 'Pareamento Alpha';
+                document.getElementById('game-authors').textContent = 'a game by jma7th';
                 iframe.width = iframeWidth;
                 iframe.height = iframeHeight;
                 // Optionally, you can show an error message or handle the invalid URL case
@@ -80,8 +87,8 @@
             }
         });
         </script>
-         <button class="overlay-button" onclick="toggleFullscreen()">Fullscreen</button>
-         <button class="back-button" onclick="history.back()">Go Back</button>
+         <!-- button class="overlay-button" onclick="toggleFullscreen()">Fullscreen</button -->
+         <!-- button class="back-button" onclick="history.back()">Go Back</button -->
         <iframe id="game-iframe" width="360" height="640" frameborder="0" allow="fullscreen" scrolling="no"></iframe>
     
     </section>
