@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-padding-top: 10rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    /*padding-top: 80px; /* Space for fixed header */
+    padding-bottom: 60px; /* Space for fixed footer */
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000; /* Ensures header stays on top */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*margin-top: 80px; /* Adjust this value based on your header's height */
+    position: relative;
+    scroll-margin-top: 80px; /* Adjust this value to match your header height */
+}
+
+section::before {
+    content: "";
+    display: block;
+    height: 80px; /* Adjust this value to match your header height */
+    margin-top: -80px; /* Adjust this value to match your header height */
+    visibility: hidden;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000; /* Ensures footer stays on top */
+}
