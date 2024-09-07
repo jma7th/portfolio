@@ -46,7 +46,7 @@ header nav ul li a {
 
 section {
     padding: 20px;
-    margin: 20px 0;
+    margin: 18px 0;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -100,9 +100,9 @@ footer {
 }
 .overlay-button {
     position: absolute;
-    top: 10px;
+    top: -10px;
     left: 10px;
-    padding: 10px 20px;
+    padding: 0px 2px;
     border: none;
     border-radius: 5px;
     background-color: #007BFF;
@@ -120,9 +120,9 @@ footer {
 }
 .back-button {
     position: absolute;
-    top: 10px;
-    left: 150px; /* Adjust this value to position the button */
-    padding: 10px 20px;
+    top: -10px;
+    left: 100px; /* Adjust this value to position the button */
+    padding: 2x 2px;
     border: none;
     border-radius: 5px;
     background-color: #28a745;
