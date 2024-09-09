@@ -11,9 +11,14 @@
         "title": "Contact Me",
         "email": "Email: <a href=\"mailto:jma7th@gmail.com\">jma7th@gmail.com</a>"
     },
+    "game": {
+        "fullscreen": "Fullscreen"
+    },
     "pagination": {
         "previous": "Previous",
-        "next": "Next"
+        "next": "Next",
+        "page": "Page",
+        "of":   "of"
     },
     "nav": {
         "about": "About",

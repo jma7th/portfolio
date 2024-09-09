@@ -11,9 +11,14 @@
         "title": "Contato",
         "email": "Email: <a href=\"mailto:jma7th@gmail.com\">jma7th@gmail.com</a>"
     },
+    "game": {
+        "fullscreen": "Tela Cheia"
+    },
     "pagination": {
         "previous": "Anterior",
-        "next": "Próximo"
+        "next": "Próximo",
+        "page": "Página",
+        "of": "de"
     },
     "nav": {
         "about": "Sobre",

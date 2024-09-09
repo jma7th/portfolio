@@ -19,6 +19,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
 
+    // game functions
+    
+    function toggleFullscreen() {
+        var iframe = document.querySelector('iframe');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
+        }
+        
+    }
+
+
+    // render page
+
     function renderPage(games, page) {
         const projectsGrid = document.getElementById('projects-grid');
         projectsGrid.innerHTML = ''; // Clear existing content
@@ -36,7 +55,22 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectDiv.className = 'project';
 
             const projectLink = document.createElement('a');
-            projectLink.href = `game.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
+            //projectLink.href = `game.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
+            
+            projectLink.addEventListener('click', function() {
+                const iframe =  document.getElementById('game-iframe')
+                const fullscreen = document.getElementById('game-fullscreen')
+                fullscreen.addEventListener('click', toggleFullscreen)
+
+                // Set the source of the iframe
+                iframe.src = `iframe.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
+                iframe.width = game.width;
+                iframe.height = game.height;
+                // Append the iframe to the projectLink element
+                currentSectionIndex = 0;
+                showSection(currentSectionIndex)
+              });
+
 
             const projectTitle = document.createElement('h3');
             projectTitle.textContent = game.title;
@@ -52,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectDescription.textContent = game.description[currentLanguage];
 
             const projectTags = document.createElement('p');
-            projectTags.textContent = `Tags: ${game.tags ? game.tags.join(', ') : 'No tags available'}`;
+            projectTags.textContent = `${game.tags ? game.tags.join(', ') : 'No tags available'}`;
 
             projectLink.appendChild(projectTitle);
             projectLink.appendChild(projectAuthor);
@@ -63,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectsGrid.appendChild(projectDiv);
         });
 
-        document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
+        //document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
         document.getElementById('prev-page').disabled = page === 1;
         document.getElementById('next-page').disabled = page === totalPages;
     }
@@ -95,11 +129,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                 { id: 'search-input', attribute: 'placeholder', text: translations.projects.searchPlaceholder },
                 { id: 'contact-title', text: translations.contact.title },
                 { id: 'contact-email', html: translations.contact.email },
+                { id: 'game-fullscreen', html: translations.game.fullscreen },
                 { id: 'prev-page', text: translations.pagination.previous },
                 { id: 'next-page', text: translations.pagination.next },
                 { id: 'nav-about', text: translations.nav.about },
                 { id: 'nav-projects', text: translations.nav.projects },
-                { id: 'nav-contact', text: translations.nav.contact }
+                { id: 'nav-contact', text: translations.nav.contact },
+                { id: 'page-info', text: translations.pagination.page+` ${currentPage} `+translations.pagination.of+` ${totalPages}`}
             ];
 
             elementsToUpdate.forEach(item => {
@@ -131,10 +167,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     const sectionsWrapper = document.querySelector('.sections-wrapper');
     const prevButton = document.getElementById('prev-section');
     const nextButton = document.getElementById('next-section');
-    let currentSectionIndex = 0;
+    let currentSectionIndex = 1;
 
+    
     function showSection(index) {
         const sectionWidth = sections[0].offsetWidth;
+       
         sectionsWrapper.style.transform = `translateX(-${index * sectionWidth}px)`;
 
         navLinks.forEach(link => {
@@ -146,6 +184,16 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         prevButton.disabled = index === 0;
         nextButton.disabled = index === sections.length - 1;
+
+        if (index === 1) {
+            document.getElementById('prev-page').style.display = 'inline';
+            document.getElementById('page-info').style.display = 'inline';
+            document.getElementById('next-page').style.display = 'inline';
+        } else {
+            document.getElementById('prev-page').style.display = 'none';
+            document.getElementById('page-info').style.display = 'none';
+            document.getElementById('next-page').style.display = 'none';
+        }
     }
 
     navLinks.forEach((link, index) => {
