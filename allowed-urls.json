@@ -1,32 +1,106 @@
-
 {
     "games": [
         {
-            "url": "https://jma7th.github.io/Pareamento-Alpha/",
-            "author": "a game by jma7th",
-            "title": "Pareamento"
-        },
-        {
-            "url": "https://jma7th.github.io/fishing-game/html5/index.html",
-            "title": "Pescaria da Lavi-chan"
-        },
-        {
             "url": "https://itch.io/embed-upload/10148199?color=000000",
             "title": "Defiant Strife",
-            "author": "a game by jma7th and Enzo7274"
+            "description": {
+                "en": "Arcade-like maze shoot 'em up game.",
+                "pt": "Jogo de tiro estilo arcade em labirinto."
+            },
+            "image": "img/defiant-strife.png",
+            "author": {
+                "en": "by jma7th and Enzo7274",
+                "pt": "por jma7th e Enzo7274"
+            },
+            "tags": ["Arcade", "Shooter", "Maze"],
+            "hidden": false,
+            "width": 640,
+            "height": 360
+        },
+        {
+            "url": "https://itch.io/embed-upload/10025909?color=ffffff",
+            "title": "Maddie Rush",
+            "description": {
+                "en": "Award winning puzzle game, stylized like the game boy era games.",
+                "pt": "Jogo de quebra-cabeça premiado, estilizado como os jogos da era do Game Boy."
+            },
+            "image": "img/maddie-rush.png",
+            "author": {
+                "en": "by jma7th",
+                "pt": "por jma7th"
+            },
+            "tags": ["Puzzle", "Retro", "Award-winning"],
+            "hidden": false,
+            "width": 360,
+            "height": 640
+        },
+        {
+            "url": "https://itch.io/embed-upload/10195521?color=5f5f5f",
+            "title": "Erutnevda",
+            "description": {
+                "en": "Another jam winner game, based on Adventure for the Atari 2600... with a twist.",
+                "pt": "Outro jogo vencedor de jam, baseado em Adventure para o Atari 2600... com uma reviravolta."
+            },
+            "image": "img/erutnevda.png",
+            "author": {
+                "en": "by jma7th",
+                "pt": "por jma7th"  
+            },
+            "tags": ["Adventure", "Retro", "Jam Winner"],
+            "hidden": false,
+            "width": 640,
+            "height": 380
         },
         {
             "url": "https://itch.io/embed-upload/9967862?color=3f2832",
             "title": "Escape Dragon",
-            "author": "a game by jma7th, Lavinia Pamponet and Thaís Ferreira"
+            "description": {
+                "en": "Made for a jam. It's kinda like a sequel of Erutnevda, but actually, it was made before that.",
+                "pt": "Feito para uma jam. É meio que uma sequência de Erutnevda, mas na verdade, foi feito antes disso."
+            },
+            "image": "img/escape-dragon.png",
+            "author": { 
+                "en": "by jma7th, Lavinia Pamponet and Thais Ferreira",
+                "pt": "por jma7th, Lavinia Pamponet e Thais Ferreira"
+            },
+            "tags": ["Adventure", "Retro", "Jam"],
+            "hidden": false,
+            "width": 640,
+            "height": 380
         },
         {
-            "url": "https://itch.io/embed-upload/10195521?color=5f5f5f",
-            "title": "erutnevdA"
+            "url": "https://jma7th.github.io/fishing-game/html5/index.html",
+            "title": "Pescaria da Lavi-chan",
+            "description": {
+                "en": "Fishing game.",
+                "pt": "Jogo de pesca."
+            },
+            "image": "img/pescaria-da-lavi-chan.png",
+            "author": {
+                "en": "by jma7th",
+                "pt": "por jma7th"  
+            },
+            "tags": ["Fishing", "Casual"],
+            "hidden": false,
+            "width": 360,
+            "height": 640
         },
         {
-            "url": "https://itch.io/embed-upload/10025909?color=ffffff",
-            "title": "Maddie Rush"
+            "url": "https://jma7th.github.io/Pareamento-Alpha/",
+            "title": "Pareamento",
+            "description": {
+                "en": "Game exercise for kids.",
+                "pt": "Exercício de jogo para crianças."
+            },
+            "image": "images/pareamento.png",
+            "author": {
+                "en": "by jma7th",
+                "pt": "por jma7th"  
+            },
+            "tags": ["Educational", "Kids"],
+            "hidden": true,
+            "width": 640,
+            "height": 360
         }
     ]
 }
