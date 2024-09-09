@@ -62,25 +62,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const iframe =  document.getElementById('game-iframe')
                 const fullscreen = document.getElementById('game-fullscreen')
                 fullscreen.addEventListener('click', toggleFullscreen)
+                
 
                 // Set the source of the iframe
                 iframe.src = `iframe.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
                 iframe.width = game.width;
                 iframe.height = game.height;
 
-                // Detect orientation change
-                function handleOrientationChange() {
-                    if (game.height> game.height) {
-                        document.body.classList.add('portrait');
-                    } else {
-                        document.body.classList.remove('portrait');
-                    }
+                if (game.width > game.height && window.screen.orientation) {
+                    rotatescreen(fullscreen);
                 }
-
-                window.addEventListener('resize', handleOrientationChange);
-                handleOrientationChange(); 
-                
-                 
                 // Append the iframe to the projectLink element
                 currentSectionIndex = 0;
                 showSection(currentSectionIndex)

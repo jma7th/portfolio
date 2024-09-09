@@ -9,40 +9,7 @@
 </head>
 <body>
     <header>
-        <script>
-            function updateLockButton() {
-              const lockButton = document.getElementById("button");
-              const newOrientation = getOppositeOrientation();
-              lockButton.textContent = `Lock to ${newOrientation}`;
-            }
-            
-            function getOppositeOrientation() {
-              return screen
-                .orientation
-                .type
-                .startsWith("portrait") ? "landscape" : "portrait";
-            }
-            
-            async function rotate(lockButton) {
-              if (!document.fullscreenElement) {
-                await document.documentElement.requestFullscreen();
-              }
-              const newOrientation = getOppositeOrientation();
-              await screen.orientation.lock(newOrientation);
-              updateLockButton(lockButton);
-            }
-            
-            screen.orientation.addEventListener("change", updateLockButton);
-            
-            window.addEventListener("load", updateLockButton);
-            </script>
-            
-            <button onclick="rotate(this)" id="button">
-              Lock to...
-            </button>
-            <button onclick="screen.orientation.unlock()">
-              Unlock
-            </button>
+        <script src="scripts-screen.js"></script>
         <table style="width: 100%">
             <td>
                 <button id="prev-section" class="nav-button">&lt;</button>
