@@ -70,8 +70,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 if (game.width > game.height) {
                     rotatescreen('landscape');
+                    fullscreen.addEventListener('click', function() {
+                        rotatescreen('landscape');
+                    });
                 } else {
                     rotatescreen('portrait');
+                    fullscreen.addEventListener('click', function() {
+                        rotatescreen('portrait');
+                    });
                 }
                 window.scrollTo(0, 0);
                 // Append the iframe to the projectLink element
@@ -103,11 +109,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectDiv.appendChild(projectDescription);
             projectDiv.appendChild(projectTags);
             projectsGrid.appendChild(projectDiv);
-
-            // Apply landscape class if the game requires landscape orientation
-            if (game.width > game.height) {
-                projectDiv.classList.add('landscape');
-            }
         });
 
         //document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
