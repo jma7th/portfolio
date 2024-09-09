@@ -20,14 +20,13 @@ function updateLockButton() {
               updateLockButton(lockButton);
             }
             
-            async function rotatescreen() {
+            async function rotatescreen(newOrientation) {
               if (!document.fullscreenElement) {
                 await document.documentElement.requestFullscreen();
               }
-              const newOrientation = getOppositeOrientation();
               await screen.orientation.lock(newOrientation);
             }
-            
+
             screen.orientation.addEventListener("change", updateLockButton);
             
             window.addEventListener("load", updateLockButton);

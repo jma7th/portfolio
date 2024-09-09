@@ -70,8 +70,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                 iframe.height = game.height;
 
                 if (game.width > game.height && window.screen.orientation) {
-                    rotatescreen(fullscreen);
+                    rotatescreen('landscape');
+                    toggleFullscreen();
+                } else {
+                    rotatescreen('portrait');
+                    toggleFullscreen();
                 }
+                window.scrollTo(0, 0);
                 // Append the iframe to the projectLink element
                 currentSectionIndex = 0;
                 showSection(currentSectionIndex)
