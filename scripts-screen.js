@@ -6,8 +6,10 @@
                 .startsWith("portrait") ? "landscape" : "portrait";
             }            
             async function rotatescreen(newOrientation) {
+              
               if (!document.fullscreenElement) {
-                await toggleFullscreen();
+                await document.getElementById('game-iframe').requestFullscreen();
+
               }
               await screen.orientation.lock(newOrientation);
             }

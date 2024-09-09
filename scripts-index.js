@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectLink.addEventListener('click', function() {
                 const iframe =  document.getElementById('game-iframe')
                 const fullscreen = document.getElementById('game-fullscreen')
-                fullscreen.addEventListener('click', toggleFullscreen)
                 
 
                 // Set the source of the iframe
@@ -69,12 +68,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 iframe.width = game.width;
                 iframe.height = game.height;
 
-                if (game.width > game.height && window.screen.orientation) {
+                if (game.width > game.height) {
                     rotatescreen('landscape');
-                    toggleFullscreen();
                 } else {
                     rotatescreen('portrait');
-                    toggleFullscreen();
                 }
                 window.scrollTo(0, 0);
                 // Append the iframe to the projectLink element
