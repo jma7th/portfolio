@@ -133,12 +133,9 @@ footer {
         font-size: 18px;
         padding: 8px;
     }
-
-    #game-fullscreen table table { 
-        display:inline-block;vertical-align:top; 
-    
-    }
 }
+
+
 .project {
     border: 1px solid #ccc;
     padding: 10px;

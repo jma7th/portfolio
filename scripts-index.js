@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function() {
+    
     const itemsPerPage = 5; // Number of items to display per page
     let currentPage = 1;
     let totalPages = 1;
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         
     }
 
-
+    
     // render page
 
     function renderPage(games, page) {
@@ -66,6 +67,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 iframe.src = `iframe.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
                 iframe.width = game.width;
                 iframe.height = game.height;
+
+                // Detect orientation change
+                function handleOrientationChange() {
+                    if (game.height> game.height) {
+                        document.body.classList.add('portrait');
+                    } else {
+                        document.body.classList.remove('portrait');
+                    }
+                }
+
+                window.addEventListener('resize', handleOrientationChange);
+                handleOrientationChange(); 
+                
+                 
                 // Append the iframe to the projectLink element
                 currentSectionIndex = 0;
                 showSection(currentSectionIndex)
@@ -95,6 +110,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectDiv.appendChild(projectDescription);
             projectDiv.appendChild(projectTags);
             projectsGrid.appendChild(projectDiv);
+
+            // Apply landscape class if the game requires landscape orientation
+            if (game.width > game.height) {
+                projectDiv.classList.add('landscape');
+            }
         });
 
         //document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
