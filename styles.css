@@ -1,79 +1,92 @@
+/* General styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-padding-top: 10rem;
 }
+
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    /*padding-top: 80px; /* Space for fixed header */
-    padding-bottom: 60px; /* Space for fixed footer */
+    margin: 0;
+    padding: 0;
+    background-color: darkgrey;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
     background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    color: white;
+    padding: 10px 0;
     text-align: center;
-    z-index: 1000; /* Ensures header stays on top */
-    text-decoration: none;
+    position: sticky;
+    top: 0; /* Ensure the header sticks to the top */
+    z-index: 1000;
 }
 
-header nav ul {
-    list-style: none;
+nav ul {
+    list-style-type: none;
     padding: 0;
 }
 
-header nav ul li {
+nav ul li {
     display: inline;
     margin: 0 10px;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li a {
+    color: white;
     text-decoration: none;
 }
 
-section {
-    padding: 20px;
-    margin: 18px 0;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /*margin-top: 80px; /* Adjust this value based on your header's height */
+nav ul li a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.horizontal-container {
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     position: relative;
-    scroll-margin-top: 80px; /* Adjust this value to match your header height */
 }
 
-section::before {
-    content: "";
-    display: block;
-    height: 80px; /* Adjust this value to match your header height */
-    margin-top: -80px; /* Adjust this value to match your header height */
-    visibility: hidden;
+.sections-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
 }
 
-h1, h1:visited, h1:hover, h1:active, h1:focus {
-    text-decoration: none;
-    color: #fff;
-    cursor: default;
-    
+.content-section {
+    min-width: 100vw;
+        box-sizing: border-box;
 }
 
-h2 {
-    margin-bottom: 10px;
+.nav-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
 }
 
+.nav-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
 /* project grid styles */
 
 .project-grid {
@@ -87,7 +100,7 @@ h2 {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #dddddd;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -156,11 +169,10 @@ h2 {
 }
 
 .search-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    width: 40%;
+    display: inline;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 2px;
     font-size: 1em;
 }
 .pagination-info {

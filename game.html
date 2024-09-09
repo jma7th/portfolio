@@ -18,7 +18,13 @@
             <ul>
                 <li><a href="./index.html#projects">Back</a></li>
                 <li><a href="javascript:toggleFullscreen()">Fullscreen</a></li>
-                
+                <li>
+                    <label for="language-selector" class="visually-hidden">Select Language</label>
+                    <select id="language-selector" aria-label="Language Selector">
+                    <option value="en">English</option>
+                    <option value="pt">Português</option>
+                    </select>
+                </li>
             </ul>
         </nav>
     </header>
@@ -103,7 +109,7 @@
          <!-- button class="overlay-button" onclick="toggleFullscreen()">Fullscreen</button -->
          <!-- button class="back-button" onclick="history.back()">Go Back</button -->
         <iframe id="game-iframe" width="360" height="640" frameborder="0" allow="fullscreen" scrolling="no"></iframe>
-    
+        <script src="scripts-lang.js" defer></script>
     </section>
     </div>
     <footer>
