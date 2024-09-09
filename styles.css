@@ -14,6 +14,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: darkgrey;
+    padding-bottom: 80px;
 }
 
 header {
@@ -111,7 +112,33 @@ footer {
     gap: 20px;
     /*padding: 20px; */
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px;
+    }
 
+    .sections-wrapper {
+        display: flex;
+        padding: 0px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .nav-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    #game-fullscreen table table { 
+        display:inline-block;vertical-align:top; 
+    
+    }
+}
 .project {
     border: 1px solid #ccc;
     padding: 10px;
@@ -183,6 +210,7 @@ footer {
     margin: 0 10px;
     font-size: 1.2em;
 }
+
 
 .search-input {
     width: 40%;
@@ -270,3 +298,5 @@ footer {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+
