@@ -134,7 +134,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectTitle.textContent = game.title;
 
             const projectAuthor = document.createElement('p');
-            projectAuthor.textContent = `${game.author[currentLanguage]}\n`;
+            projectAuthor.textContent = `${game.author[currentLanguage]}`;
+            const projectAuthorBr = document.createElement('p');
+
 
             const projectImage = document.createElement('img');
             projectImage.src = game.image;
@@ -150,6 +152,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             projectLink.appendChild(projectTitle);
             projectLink.appendChild(projectAuthor);
+            projectLink.appendChild(projectAuthorBr);
             projectLink.appendChild(projectImage);
             projectDiv.appendChild(projectLink);
             projectDiv.appendChild(projectDescription);

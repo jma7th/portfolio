@@ -27,8 +27,8 @@
             "url": "https://itch.io/embed-upload/10025909?color=ffffff",
             "title": "Maddie Rush",
             "description": {
-                "en": "Award winning puzzle game, stylized like the game boy era games.",
-                "pt": "Jogo de quebra-cabeça premiado, estilizado como os jogos da era do Game Boy."
+                "en": "This puzzle game stylized like the game boy era games was the winner of the GameVita 3.0 competition in the Best Game Overall category!.",
+                "pt": "Esse jogo de quebra-cabeça vencedor da competição GameVita 3.0 na categoria 'Melhor jogo geral' é estilizado como os jogos da era do Game Boy."
             },
             "image": "img/maddie-rush.png",
             "author": {
@@ -40,7 +40,7 @@
                 "pt": "Pressione o botão B do 'Lock Boy' para abrir e fechar os portões. O botão select pode ser usado para reiniciar a fase, caso fique preso."
                 
             },
-            "tags": ["Puzzle", "Retro", "Award-winning"],
+            "tags": ["Puzzle", "Retro", "Game Jam"],
             "hidden": false,
             "width": 360,
             "height": 640
@@ -62,7 +62,7 @@
                 "en": "You can move with the arrow keys, and interact with the space bar.",
                 "pt": "Você pode se mover com as setas, e interagir com a barra de espaço."
             },
-            "tags": ["Adventure", "Retro", "Jam Winner"],
+            "tags": ["Adventure", "Retro", "Game Jam", "Atari"],
             "hidden": false,
             "width": 640,
             "height": 380
@@ -84,7 +84,7 @@
                 "en": "You can move with the arrow keys, and interact with the Z key.",
                 "pt": "Você pode se mover com as setas, e interagir com a tecla Z."
             },
-            "tags": ["Adventure", "Retro", "Jam"],
+            "tags": ["Adventure", "Retro", "Game Jam", "Atari"],
             "hidden": false,
             "width": 640,
             "height": 380
@@ -129,7 +129,7 @@
                 "pt": "Dinâmica para auxiliar o desenvolvimento e aprendizagem de crianças em momento de alfabetização. Associação da imagens, palavras e memória."
             },
             "tags": ["Educational", "Kids"],
-            "hidden": true,
+            "hidden": false,
             "width": 640,
             "height": 360
         }
