@@ -130,8 +130,8 @@
             },
             "tags": ["Educational", "Kids"],
             "hidden": false,
-            "width": 640,
-            "height": 360
+            "width": 360,
+            "height": 640
         }
     ]
 }
