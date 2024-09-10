@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    
+    const titleFont = 'VT323';
+    const titleFontSize = '4em';
+    const titleFontStyle = 'monospace';
+    const bodyFont = 'Roboto';
+    const bodyFontSize = '1em';
+    const bodyFontStyle = 'sans-serif';
     const itemsPerPage = 5; // Number of items to display per page
     let currentPage = 1;
     let totalPages = 1;
@@ -22,24 +27,81 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
 
-    // game functions
-    
-    function toggleFullscreen() {
-        var iframe = document.querySelector('iframe');
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) { // Firefox
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) { // IE/Edge
-            iframe.msRequestFullscreen();
-        }
+    // run games in iframe
+
+    function loadGameText(game) {
+        const text = document.getElementById('game-text');
         
+        text.innerHTML = `<span style="font-family: ${titleFont}, ${titleFontStyle}; font-size: ${titleFontSize}">${game.title}</span><br><br><span style="font-family: '${bodyFont}', ${bodyFontStyle}; font-size: ${bodyFontSize}">${game.text[currentLanguage]}</span>`; // Set the text of the game with Arial font
     }
 
-    
+    function getGameById(id) {
+        return allGames.find(game => game.id === id);
+    }
+
+    function loadGame(game) {
+        if (document.getElementById('game-iframe')) {
+            document.getElementById('game-iframe').remove();
+        }
+
+        const fullscreen = document.getElementById('game-fullscreen')
+        currentGameId = game.id;
+        currentGameNumber = allGames.findIndex(game => game.id === currentGameId);
+        
+        
+
+        loadGameText(game);
+
+        // Set the source of the iframe
+        
+        const newframe = document.createElement('iframe');
+        newframe.id = 'game-iframe';
+        newframe.name = 'iframe-game';
+        newframe.width = game.width;
+        newframe.height = game.height;
+        newframe.src = `iframe.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
+        //newframe.src = game.url; // alternate
+        //newframe.height = game.height;
+        /*newframe.frameBorder = "0";  
+        newframe.allowFullscreen = true; 
+        newframe.allow = "autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated";
+        newframe.style.allowTransparency = "true";
+        newframe.webkitAllowFullScreen = true;
+        newframe.mozAllowFullScreen = true;
+        newframe.msAllowFullScreen = true; 
+        newframe.style.overflow = "hidden";
+*/
+        newframe.frameborder="0"  
+        newframe.allowfullscreen="true" 
+        newframe.allow = "autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated";
+        newframe.allowtransparency="true";
+        newframe.webkitallowfullscreen="true";
+        newframe.mozallowfullscreen="true";
+        newframe.msallowfullscreen="true"; 
+        newframe.scrolling="no";
+
+        document.getElementById('game-container').appendChild(newframe);
+
+        if (game.width > game.height) {
+            rotatescreen('landscape');
+            fullscreen.addEventListener('click', function() {
+                rotatescreen('landscape');
+            });
+        } else {
+            rotatescreen('portrait');
+            fullscreen.addEventListener('click', function() {
+                rotatescreen('portrait');
+            });
+        }
+        window.scrollTo(0, 0);
+        // Append the iframe to the projectLink element
+        currentSectionIndex = 0;
+        showSection(currentSectionIndex)
+    }
+
     // render page
+
+
 
     function renderPage(games, page) {
         const projectsGrid = document.getElementById('projects-grid');
@@ -61,44 +123,18 @@ document.addEventListener('DOMContentLoaded', async function() {
             //projectLink.href = `game.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
             
             projectLink.addEventListener('click', function() {
-                const iframe =  document.getElementById('game-iframe')
-                const fullscreen = document.getElementById('game-fullscreen')
-                currentGameId = game.id;
-                currentGameNumber = allGames.findIndex(game => game.id === currentGameId);
                 
-                const text = document.getElementById('game-text');
-
-                text.textContent = game.text[currentLanguage]; 
-
-                // Set the source of the iframe
-                iframe.src = `iframe.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
-                iframe.width = game.width;
-                iframe.height = game.height;
-
-                if (game.width > game.height) {
-                    rotatescreen('landscape');
-                    fullscreen.addEventListener('click', function() {
-                        rotatescreen('landscape');
-                    });
-                } else {
-                    rotatescreen('portrait');
-                    fullscreen.addEventListener('click', function() {
-                        rotatescreen('portrait');
-                    });
-                }
-                window.scrollTo(0, 0);
-                // Append the iframe to the projectLink element
-                currentSectionIndex = 0;
-                showSection(currentSectionIndex)
+                history.pushState(null, '', `?game=${game.id}`);
+                loadGame(game);
               });
 
                
 
-            const projectTitle = document.createElement('h3');
+            const projectTitle = document.createElement('h2');
             projectTitle.textContent = game.title;
 
             const projectAuthor = document.createElement('p');
-            projectAuthor.textContent = game.author[currentLanguage];
+            projectAuthor.textContent = `${game.author[currentLanguage]}\n`;
 
             const projectImage = document.createElement('img');
             projectImage.src = game.image;
@@ -182,9 +218,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
 
             currentLanguage = lang; // Update current language
-            const text = document.getElementById('game-text');
-
-            text.textContent = allGames[currentGameNumber].text[currentLanguage]; 
+            loadGameText(allGames[currentGameNumber]); // Update the game text 
             renderPage(filteredGames, currentPage); // Re-render the page with the new language
         } catch (error) {
             console.error('Failed to load language file:', error);
@@ -290,4 +324,22 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Load default language
     loadLanguage('en');
+
+    function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const regex = /([^&=]+)=([^&]*)/g;
+        let m;
+        while (m = regex.exec(queryString)) {
+            params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        }
+        return params;
+    }
+
+    const params = getQueryParams();
+    const URLGame = params['game'];
+    loadGame(getGameById(URLGame));
+
+
+    
 });
