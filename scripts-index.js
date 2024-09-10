@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     let allGames = []; // Store all games data
     let filteredGames = []; // Store filtered games data
     let currentLanguage = 'en'; // Default language
+    let currentGameNumber = -1;
+    let currentGameId = '-1';
 
     async function fetchGames() {
         try {
@@ -61,7 +63,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             projectLink.addEventListener('click', function() {
                 const iframe =  document.getElementById('game-iframe')
                 const fullscreen = document.getElementById('game-fullscreen')
+                currentGameId = game.id;
+                currentGameNumber = allGames.findIndex(game => game.id === currentGameId);
                 
+                const text = document.getElementById('game-text');
+
+                text.textContent = game.text[currentLanguage]; 
 
                 // Set the source of the iframe
                 iframe.src = `iframe.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
@@ -85,6 +92,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 showSection(currentSectionIndex)
               });
 
+               
 
             const projectTitle = document.createElement('h3');
             projectTitle.textContent = game.title;
@@ -98,6 +106,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             const projectDescription = document.createElement('p');
             projectDescription.textContent = game.description[currentLanguage];
+
+            
 
             const projectTags = document.createElement('p');
             projectTags.textContent = `${game.tags ? game.tags.join(', ') : 'No tags available'}`;
@@ -152,6 +162,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 { id: 'page-info', text: translations.pagination.page+` ${currentPage} `+translations.pagination.of+` ${totalPages}`}
             ];
 
+            
+
             elementsToUpdate.forEach(item => {
                 const element = document.getElementById(item.id);
                 if (element) {
@@ -170,6 +182,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
 
             currentLanguage = lang; // Update current language
+            const text = document.getElementById('game-text');
+
+            text.textContent = allGames[currentGameNumber].text[currentLanguage]; 
             renderPage(filteredGames, currentPage); // Re-render the page with the new language
         } catch (error) {
             console.error('Failed to load language file:', error);

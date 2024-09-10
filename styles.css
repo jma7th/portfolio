@@ -60,6 +60,89 @@ nav ul li a.active {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Minified CSS */
+.game-text-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.game-text-container p {
+    flex-basis: 100%;
+}
+
+#game-fullscreen {
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    padding: 10px; /* Padding inside the rectangle */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin to separate it from other elements */
+    text-align: center; /* Center the text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Adjust font size */
+    color: #333; /* Text color */
+}
+
+/* Game container styles */
+.game-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+#game-iframe {
+    flex: 1;
+    max-width: 60%;
+}
+
+#game-text {
+    flex: 1;
+    margin-right: 40px;
+    margin-left: 20px;
+    max-width: 30%;
+    max-height: 100%;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    padding: 10px; /* Padding inside the rectangle */
+    border-radius: 5px; /* Rounded corners */
+    text-align: left; /* Center the text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Adjust font size */
+    color: #333; /* Text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .nav-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #game-iframe {
+        max-width: 100%;
+    }
+
+    #game-text {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
 .content-section {
     min-width: 100vw;
     box-sizing: border-box;
@@ -112,28 +195,7 @@ footer {
     gap: 20px;
     /*padding: 20px; */
 }
-/* Responsive Design */
-@media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr; /* Single column */
-        gap: 10px;
-    }
 
-    .sections-wrapper {
-        display: flex;
-        padding: 0px;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .content-section {
-        padding: 10px;
-    }
-
-    .nav-button {
-        font-size: 18px;
-        padding: 8px;
-    }
-}
 
 
 .project {
@@ -240,10 +302,11 @@ footer {
     justify-content: center;
     align-items: center;
 
-    width: 100%;
+    max-width: 100%;
     height: 100%; /* Full viewport height */
     
 }
+
 .overlay-button {
     position: absolute;
     top: -10px;
@@ -297,3 +360,34 @@ footer {
 }
 
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px;
+    }
+
+    .sections-wrapper {
+        display: flex;
+        padding: 0px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .nav-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .iframe-container {
+        justify-content: center;
+        align-items: center;
+    
+        width: 100%;
+        height: 100%; /* Full viewport height */
+        
+    }
+}

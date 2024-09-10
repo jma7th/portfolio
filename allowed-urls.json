@@ -1,6 +1,7 @@
 {
     "games": [
         {
+            "id": "defiant-strife",
             "url": "https://itch.io/embed-upload/11043786?color=000000",
             "title": "Defiant Strife",
             "description": {
@@ -13,11 +14,16 @@
                 "pt": "por jma7th e Enzo7274"
             },
             "tags": ["Arcade", "Shooter", "Maze"],
+            "text": {
+                "en": "You can move with the arrow keys, shoot with space, and pause / select option with Enter. Player 2 controls are AWSD, J for shooting, and K for pause.",
+                "pt": "Você pode se mover com as setas, atirar com espaço, e pausar / escolher opção com Enter. Jogador 2 usa AWSD, J para atirar e K para pausar."
+            },
             "hidden": false,
             "width": 640,
             "height": 360
         },
         {
+            "id": "maddie-rush",
             "url": "https://itch.io/embed-upload/10025909?color=ffffff",
             "title": "Maddie Rush",
             "description": {
@@ -29,12 +35,18 @@
                 "en": "by jma7th",
                 "pt": "por jma7th"
             },
+            "text": {
+                "en": "Press the B button on the 'Lock Boy' to open and close the gates. The select button can be used to restart the level, in case you get stuck.",
+                "pt": "Pressione o botão B do 'Lock Boy' para abrir e fechar os portões. O botão select pode ser usado para reiniciar a fase, caso fique preso."
+                
+            },
             "tags": ["Puzzle", "Retro", "Award-winning"],
             "hidden": false,
             "width": 360,
             "height": 640
         },
         {
+            "id": "erutnevda",
             "url": "https://itch.io/embed-upload/10195521?color=5f5f5f",
             "title": "Erutnevda",
             "description": {
@@ -46,12 +58,17 @@
                 "en": "by jma7th",
                 "pt": "por jma7th"  
             },
+            "text": {
+                "en": "You can move with the arrow keys, and interact with the space bar.",
+                "pt": "Você pode se mover com as setas, e interagir com a barra de espaço."
+            },
             "tags": ["Adventure", "Retro", "Jam Winner"],
             "hidden": false,
             "width": 640,
             "height": 380
         },
         {
+            "id": "escape-dragon",
             "url": "https://itch.io/embed-upload/9967862?color=3f2832",
             "title": "Escape Dragon",
             "description": {
@@ -63,13 +80,17 @@
                 "en": "by jma7th, Lavinia Pamponet and Thais Ferreira",
                 "pt": "por jma7th, Lavinia Pamponet e Thais Ferreira"
             },
-
+            "text":{
+                "en": "You can move with the arrow keys, and interact with the Z key.",
+                "pt": "Você pode se mover com as setas, e interagir com a tecla Z."
+            },
             "tags": ["Adventure", "Retro", "Jam"],
             "hidden": false,
             "width": 640,
             "height": 380
         },
         {
+            "id": "pescaria-da-lavi-chan",
             "url": "https://jma7th.github.io/fishing-game/html5/index.html",
             "title": "Pescaria da Lavi-chan",
             "description": {
@@ -81,12 +102,17 @@
                 "en": "by jma7th",
                 "pt": "por jma7th"  
             },
+            "text": {
+                "en": "You can move the boat with the left and right arrow keys, and cast the fishing rod with up and down keys. Avoid the big fishes!",
+                "pt": "Você pode mover o barco com as setas esquerda e direita, e lançar a vara de pesca com as setas para cima e para baixo. Evite os peixes grandes!"
+            },
             "tags": ["Fishing", "Casual"],
             "hidden": false,
             "width": 360,
             "height": 640
         },
         {
+            "id": "pareamento",
             "url": "https://jma7th.github.io/Pareamento-Alpha/",
             "title": "Pareamento",
             "description": {
@@ -97,6 +123,10 @@
             "author": {
                 "en": "by jma7th",
                 "pt": "por jma7th"  
+            },
+            "text": {
+                "en": "Dynamic to help the development and learning of children in the moment of literacy. Association of images, words and memory.",
+                "pt": "Dinâmica para auxiliar o desenvolvimento e aprendizagem de crianças em momento de alfabetização. Associação da imagens, palavras e memória."
             },
             "tags": ["Educational", "Kids"],
             "hidden": true,
