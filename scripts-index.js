@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     let totalPages = 1;
     let allGames = []; // Store all games data
     let filteredGames = []; // Store filtered games data
-    let currentLanguage = 'en'; // Default language
+    let navLanguage = navigator.language.substring(0, 2);
+    let currentLanguage = localStorage.getItem('language') || navLanguage; // Default language
+    document.getElementById('language-selector').value = currentLanguage;
+    
     let currentGameNumber = -1;
     let currentGameId = '-1';
 
@@ -83,12 +86,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.getElementById('game-container').appendChild(newframe);
 
         if (game.width > game.height) {
-            rotatescreen('landscape');
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                rotatescreen('landscape');
+            }
             fullscreen.addEventListener('click', function() {
                 rotatescreen('landscape');
             });
         } else {
-            rotatescreen('portrait');
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+               rotatescreen('portrait');
+            }
             fullscreen.addEventListener('click', function() {
                 rotatescreen('portrait');
             });
@@ -223,6 +230,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             currentLanguage = lang; // Update current language
             loadGameText(allGames[currentGameNumber]); // Update the game text 
             renderPage(filteredGames, currentPage); // Re-render the page with the new language
+            localStorage.setItem('language', lang); // Save the language preference');
         } catch (error) {
             console.error('Failed to load language file:', error);
         }
@@ -324,9 +332,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     document.getElementById('language-selector').addEventListener('change', (event) => {
         loadLanguage(event.target.value);
     });
-
+    
     // Load default language
-    loadLanguage('en');
+    try {
+        loadLanguage(currentLanguage) 
+    }
+    catch (error) {
+        console.error('Failed to load default language:', error);
+    }
 
     function getQueryParams() {
         const params = {};

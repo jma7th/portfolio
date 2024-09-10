@@ -1,7 +1,7 @@
 {
     "about": {
         "title": "Sobre Mim",
-        "description": "Oi! Eu sou Matheus, formado em Análise e Desenvolvimento de Sistemas no Brasil. Eu amo videogames, e abaixo estão alguns que eu já desenvolvi. Sinta-se à vontade para conferir!"
+        "description": "Oi! Eu sou Matheus, formado em Análise e Desenvolvimento de Sistemas no Brasil. Eu amo videogames, e nesta página estão alguns que eu já desenvolvi. Sinta-se à vontade para conferir!"
     },
     "projects": {
         "title": " ",
@@ -9,7 +9,7 @@
     },
     "contact": {
         "title": "Contato",
-        "email": "Email: <a href=\"mailto:jma7th@gmail.com\">jma7th@gmail.com</a>"
+        "email": "Email: <a href=\"mailto:jma7th@gmail.com\">jma7th@gmail.com</a> <br> Discord: @jmath__ <br> Instagram: @jma7th<br> Twitter: você quis dizer <strong><italic>X</italic></strong>? haha eu não faço ideia mais o que é isso <br> LinkedIn: <a href=\"https://www.linkedin.com/in/jma7th/\">jma7th</a> <br> GitHub: <a href=https://github.com/jma7th>jma7th</a>"
     },
     "game": {
         "fullscreen": "Tela Cheia"

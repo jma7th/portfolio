@@ -1,7 +1,7 @@
 {
     "about": {
         "title": "About Me",
-        "description": "Hi! I'm Matheus, a graduate in Systems Analysis and Development from Brazil. I love video games, and below are some I have developed myself already. Feel free to check them out!"
+        "description": "Hi! I'm Matheus, a graduate in Systems Analysis and Development from Brazil. I love video games, and on this page are some that I have developed myself already. Feel free to check them out!"
     },
     "projects": {
         "title": " ",
@@ -9,7 +9,7 @@
     },
     "contact": {
         "title": "Contact Me",
-        "email": "Email: <a href=\"mailto:jma7th@gmail.com\">jma7th@gmail.com</a>"
+        "email": "Email: <a href=\"mailto:jma7th@gmail.com\">jma7th@gmail.com</a><br>Discord: @jmath__<br>Instagram: @jma7th<br>Twitter: you mean <strong><italic>X</italic></strong>? haha i have no idea what's that anymore<br>LinkedIn: <a href=\"https://www.linkedin.com/in/jma7th/\">jma7th</a><br>GitHub: <a href=https://github.com/jma7th>jma7th</a>"
     },
     "game": {
         "fullscreen": "Fullscreen"
