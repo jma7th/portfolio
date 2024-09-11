@@ -15,4 +15,6 @@ to-do:
 > change search bar style to match the rest of the site
 > add button to load game in pop-up
 > hover effect for fullscreen button
+> stop user from visiting home screen if there's no game loaded
+> add fullscreen, mute and pause controls on the embed iframe
 > cool key icons to help illustrate the control keys, which should be added with the .json

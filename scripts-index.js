@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const bodyFont = 'Roboto';
     const bodyFontSize = '1em';
     const bodyFontStyle = 'sans-serif';
-    const itemsPerPage = 5; // Number of items to display per page
+    const itemsPerPage = 6; // Number of items to display per page
     let currentPage = 1;
     let totalPages = 1;
     let allGames = []; // Store all games data
@@ -168,8 +168,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
 
         //document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
+        
         document.getElementById('prev-page').disabled = page === 1;
         document.getElementById('next-page').disabled = page === totalPages;
+
     }
 
     function filterGames(query) {
@@ -256,7 +258,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         });
 
-        prevButton.disabled = index === 0;
+        prevButton.disabled = (index === 0 || index === 1 && currentGameNumber === -1);
         nextButton.disabled = index === sections.length - 1;
 
         if (index === 1) {
@@ -355,7 +357,5 @@ document.addEventListener('DOMContentLoaded', async function() {
     const params = getQueryParams();
     const URLGame = params['game'];
     loadGame(getGameById(URLGame));
-
-
     
 });

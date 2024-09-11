@@ -10,7 +10,10 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'sans-serif';
+    /*font-family: "ＭＳ Ｐゴシック"; alternative*/
+    font-weight: normal;
+    font-style: sans-serif;
     margin: 0;
     padding: 0;
     background-color: darkgrey;
@@ -18,9 +21,19 @@ body {
     /* overflow: hidden;  Hide scrollbars */
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 header {
     background-color: #333;
-    color: white;
+    color: #ccc;
     padding: 10px 0;
     text-align: center;
     position: sticky;
@@ -327,9 +340,12 @@ nav ul li select option {
 .search-input {
     width: 200%;
     display: inline;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-radius: 2px;
     font-size: 1em;
+    font-family: 'DotGothic16', sans-serif;
+    background-color: #222;
+    color: #ccc
 }
 .pagination-info {
     margin: 0 10px;
