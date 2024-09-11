@@ -48,12 +48,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         const fullscreen = document.getElementById('game-fullscreen')
+        fullscreen.remove();
         currentGameId = game.id;
         currentGameNumber = allGames.findIndex(game => game.id === currentGameId);
         
         
 
-        loadGameText(game);
+        
 
         // Set the source of the iframe
         
@@ -85,18 +86,29 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         document.getElementById('game-container').appendChild(newframe);
 
+        const fullscreenButton = document.createElement('a');
+        const gameTextBox = document.createElement('p');
+
+        fullscreenButton.id = 'game-fullscreen';
+        gameTextBox.id = 'game-text';
+
+        document.getElementById('game-div').appendChild(fullscreenButton);
+        document.getElementById('game-div').appendChild(gameTextBox);
+
+        loadGameText(game);
+
         if (game.width > game.height) {
             if (/Mobi|Android/i.test(navigator.userAgent)) {
                 rotatescreen('landscape');
             }
-            fullscreen.addEventListener('click', function() {
+            fullscreenButton.addEventListener('click', function() {
                 rotatescreen('landscape');
             });
         } else {
             if (/Mobi|Android/i.test(navigator.userAgent)) {
                rotatescreen('portrait');
             }
-            fullscreen.addEventListener('click', function() {
+            fullscreenButton.addEventListener('click', function() {
                 rotatescreen('portrait');
             });
         }
@@ -126,7 +138,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const projectDiv = document.createElement('div');
             projectDiv.className = 'project';
 
-            const projectLink = document.createElement('a');
+            const projectLink = document.createElement('p');
             //projectLink.href = `game.html?iframeSrc=${game.url}&width=${game.width}&height=${game.height}`; // Concatenate the URL with width and height
             
             projectLink.addEventListener('click', function() {
@@ -353,9 +365,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
         return params;
     }
-
     const params = getQueryParams();
     const URLGame = params['game'];
     loadGame(getGameById(URLGame));
-    
+
 });
