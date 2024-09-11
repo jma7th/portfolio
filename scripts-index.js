@@ -34,8 +34,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     function loadGameText(game) {
         const text = document.getElementById('game-text');
-        
+        const fullscreenButton = document.getElementById('game-fullscreen');
         text.innerHTML = `<span style="font-family: ${titleFont}, ${titleFontStyle}; font-size: ${titleFontSize}">${game.title}</span><br><br><span style="font-family: '${bodyFont}', ${bodyFontStyle}; font-size: ${bodyFontSize}">${game.text[currentLanguage]}</span>`; // Set the text of the game with Arial font
+        fullscreenButton.textContent = document.getElementById('game-fullscreen-placeholder').textContent;
     }
 
     function getGameById(id) {
@@ -47,8 +48,14 @@ document.addEventListener('DOMContentLoaded', async function() {
             document.getElementById('game-iframe').remove();
         }
 
-        const fullscreen = document.getElementById('game-fullscreen')
-        fullscreen.remove();
+        if (document.getElementById('game-fullscreen')) {
+            document.getElementById('game-fullscreen').remove();
+        }
+
+        if (document.getElementById('game-text')) {
+            document.getElementById('game-text').remove();
+        }
+
         currentGameId = game.id;
         currentGameNumber = allGames.findIndex(game => game.id === currentGameId);
         
@@ -90,6 +97,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const gameTextBox = document.createElement('p');
 
         fullscreenButton.id = 'game-fullscreen';
+
         gameTextBox.id = 'game-text';
 
         document.getElementById('game-div').appendChild(fullscreenButton);
@@ -209,11 +217,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             const elementsToUpdate = [
                 { id: 'about-title', text: translations.about.title },
                 { id: 'about-description', text: translations.about.description },
-                { id: 'projects-title', text: translations.projects.title },
+                //{ id: 'projects-title', text: translations.projects.title },
                 { id: 'search-input', attribute: 'placeholder', text: translations.projects.searchPlaceholder },
                 { id: 'contact-title', text: translations.contact.title },
                 { id: 'contact-email', html: translations.contact.email },
-                { id: 'game-fullscreen', html: translations.game.fullscreen },
+                { id: 'game-fullscreen-placeholder', html: translations.game.fullscreen },
                 { id: 'prev-page', text: translations.pagination.previous },
                 { id: 'next-page', text: translations.pagination.next },
                 { id: 'nav-about', text: translations.nav.about },
