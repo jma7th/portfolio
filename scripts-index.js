@@ -168,6 +168,8 @@ document.addEventListener('DOMContentLoaded', async function() {
             const projectImage = document.createElement('img');
             projectImage.src = game.image;
             projectImage.alt = game.title;
+            projectImage.width = 200;
+            projectImage.height = 200;
 
             const projectDescription = document.createElement('p');
             projectDescription.textContent = game.description[currentLanguage];
