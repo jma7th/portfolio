@@ -15,8 +15,8 @@
             },
             "tags": ["Arcade", "Shooter", "Maze"],
             "text": {
-                "en": "You can move with the arrow keys, shoot with space, and pause / select option with Enter. Player 2 controls are AWSD, J for shooting, and K for pause.",
-                "pt": "Você pode se mover com as setas, atirar com espaço, e pausar / escolher opção com Enter. Jogador 2 usa AWSD, J para atirar e K para pausar."
+                "en": "You can move with the arrow keys, shoot with space, and pause / select option with Enter. Player 2 controls are AWSD, J for shooting, and K for pause. On mobile, the left stick moves the ship, the right button shoots, and the middle button pauses the game. In case you're stuck in title screen, just press the middle button and the game will soon start. It's advised to play on landscape mode. If you're having problems with the screen orientation, try opening with your default browser on mobile.",
+                "pt": "Você pode se mover com as setas, atirar com espaço, e pausar / escolher opção com Enter. Jogador 2 usa AWSD, J para atirar e K para pausar. Em dispositivos móveis, você pode se mover usando um analógico na esquerda, atirar com o botão na direita, e pausar ao clicar no botão do meio. Caso tenha problemas pra começar o jogo, apenas aperte o botão do meio e o jogo logo começará. É recomendado jogar na horizontal. Se estiver com problemas de orientação de tela, tente abrir com o navegador padrão do seu dispositivo."
             },
             "hidden": false,
             "width": 640,
@@ -36,8 +36,8 @@
                 "pt": "por jma7th"
             },
             "text": {
-                "en": "Press the B button on the 'Lock Boy' to open and close the gates. The select button can be used to restart the level, in case you get stuck.",
-                "pt": "Pressione o botão B do 'Lock Boy' para abrir e fechar os portões. O botão select pode ser usado para reiniciar a fase, caso fique preso."
+                "en": "Press the buttons on the 'Lock Boy' to play! To begin the game, press the 'Start' button. The D-pad is unfortunately broken and I'm not allowed to fix it, so... sorry! But the 'B' button can be use to open and close the gates, while the 'A' button will change the next direction in which Maddie will move next after bumping into a wall. Beware that enemies will also be effected by this! The 'Select' button can be used to restart the level, in case you get stuck.",
+                "pt": "Pressione os botões no 'Lock Boy' para jogar! Para começar o jogo, aperte o botão 'Start'. O direcional está quebrado de propósito, então... foi mal! Mas o botão 'B' pode ser usado para abrir e fechar os portões, enquanto o botão 'A' mudará a direção seguinte em que Maddie se moverá após bater em uma parede. Cuidado, pois os inimigos também serão afetados por isso! O botão 'Select' pode ser usado para reiniciar o nível, caso você fique preso."
                 
             },
             "tags": ["Puzzle", "Retro", "Game Jam"],
@@ -103,8 +103,8 @@
                 "pt": "por jma7th"  
             },
             "text": {
-                "en": "You can move the boat with the left and right arrow keys, and cast the fishing rod with up and down keys. Avoid the big fishes!",
-                "pt": "Você pode mover o barco com as setas esquerda e direita, e lançar a vara de pesca com as setas para cima e para baixo. Evite os peixes grandes!"
+                "en": "Move the boat with the left and right arrow keys, and cast the fishing rod with up and down keys. \n You may also use the mouse or touch the screen. \nAvoid the big fishes!",
+                "pt": "Mova o barco com as setas esquerda e direita, e lançar a vara de pesca com as setas para cima e para baixo. Você também pode usar o mouse ou tocar na tela pra isso. Evite os peixes grandes!"
             },
             "tags": ["Fishing", "Casual"],
             "hidden": false,
